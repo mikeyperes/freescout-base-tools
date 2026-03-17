@@ -1,0 +1,11 @@
+{
+    "name": "HexawebBaseTools",
+    "alias": "hexawebbasetools",
+    "description": "Hexaweb Systems base customizations: subject+sender email threading fallback, admin password reset for any user, watchers dropdown on conversations, and PHP 8.2 compatibility patches.",
+    "version": "1.0.0",
+    "active": 1,
+    "detached": true,
+    "providers": [
+        "Modules\\HexawebBaseTools\\Providers\\HexawebBaseToolsServiceProvider"
+    ]
+}
