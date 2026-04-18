@@ -28,6 +28,18 @@ class HexawebBaseToolsServiceProvider extends ServiceProvider
         $this->registerFooterBranding();
         $this->registerUserDefaults();
         $this->registerActivityLog();
+        $this->registerFavicon();
+    }
+
+    private function registerFavicon()
+    {
+        \Eventy::addFilter('layout.favicon', function () {
+            return \URL::asset('favicon.svg');
+        }, 20);
+
+        \Eventy::addFilter('layout.header_logo', function () {
+            return \URL::asset('favicon.svg');
+        }, 20);
     }
 
     // ═══════════════════════════════════════════════════════════════
