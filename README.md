@@ -8,6 +8,8 @@ Hexa Web Systems base customizations for FreeScout.
 - Admin password reset tool (reset any user's password from admin panel)
 - Watchers dropdown on conversations
 - PHP 8.2 compatibility patches
+- Noninteractive `php artisan tinker --execute="..."` support for the bundled Tinker 1.x
+- Admin-only watcher controls and persistent favicon/header logo overrides
 
 ## Requirements
 

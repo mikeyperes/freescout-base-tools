@@ -19,6 +19,15 @@ class HexawebBaseToolsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->loadRoutesFrom(__DIR__.'/../Http/routes.php');
+
+        // Keep compatibility with FreeScout's bundled Tinker 1.x.
+        $this->app->extend('command.tinker', function ($command) {
+            if ($command->getDefinition()->hasOption('execute')) {
+                return $command;
+            }
+
+            return new \Modules\HexawebBaseTools\Console\TinkerCommand;
+        });
     }
 
     private function hooks()
