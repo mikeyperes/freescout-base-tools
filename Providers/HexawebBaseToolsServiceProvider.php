@@ -122,6 +122,11 @@ class HexawebBaseToolsServiceProvider extends ServiceProvider
                 return;
             }
 
+            $authUser = auth()->user();
+            if (!$authUser || !$authUser->isAdmin()) {
+                return;
+            }
+
             $follower_user_ids = $conversation->followers->pluck('user_id')->toArray();
             $assignable_users = $mailbox->usersAssignable();
             $watcher_names = [];
